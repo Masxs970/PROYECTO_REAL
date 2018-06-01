@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ComprasGrid = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.SalirCompras = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ComprasButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ComprasGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ComprasGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(381, 246);
-            this.dataGridView1.TabIndex = 0;
+            this.ComprasGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ComprasGrid.Location = new System.Drawing.Point(12, 12);
+            this.ComprasGrid.Name = "ComprasGrid";
+            this.ComprasGrid.Size = new System.Drawing.Size(381, 246);
+            this.ComprasGrid.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -69,15 +69,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(263, 20);
             this.dateTimePicker1.TabIndex = 3;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(535, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Compras";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // SalirCompras
             // 
             this.SalirCompras.Location = new System.Drawing.Point(637, 259);
@@ -97,21 +88,31 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Filtrar";
             // 
+            // ComprasButton
+            // 
+            this.ComprasButton.Location = new System.Drawing.Point(547, 259);
+            this.ComprasButton.Name = "ComprasButton";
+            this.ComprasButton.Size = new System.Drawing.Size(75, 23);
+            this.ComprasButton.TabIndex = 7;
+            this.ComprasButton.Text = "Compras";
+            this.ComprasButton.UseVisualStyleBackColor = true;
+            this.ComprasButton.Click += new System.EventHandler(this.ComprasButton_Click);
+            // 
             // ViewCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 294);
+            this.Controls.Add(this.ComprasButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SalirCompras);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ComprasGrid);
             this.Name = "ViewCompras";
             this.Text = "Compras";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComprasGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,12 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ComprasGrid;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button SalirCompras;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ComprasButton;
     }
 }

@@ -98,9 +98,10 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::ProyectoTienda.Properties.Resources.Login;
             this.pictureBox1.Location = new System.Drawing.Point(365, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 226);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -120,13 +121,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 331);
             this.Controls.Add(this.SalirButton);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ConectarButton);
             this.Controls.Add(this.InsertPassword);
             this.Controls.Add(this.InsertUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "LogIn";
             this.Text = "Log In";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
