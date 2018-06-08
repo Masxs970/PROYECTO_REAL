@@ -40,7 +40,7 @@
             this.ProductosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosGrid.Location = new System.Drawing.Point(7, 12);
             this.ProductosGrid.Name = "ProductosGrid";
-            this.ProductosGrid.Size = new System.Drawing.Size(643, 223);
+            this.ProductosGrid.Size = new System.Drawing.Size(551, 193);
             this.ProductosGrid.TabIndex = 0;
             // 
             // ViewProductos
@@ -55,7 +55,7 @@
             // 
             // SalirProductos
             // 
-            this.SalirProductos.Location = new System.Drawing.Point(551, 311);
+            this.SalirProductos.Location = new System.Drawing.Point(462, 311);
             this.SalirProductos.Name = "SalirProductos";
             this.SalirProductos.Size = new System.Drawing.Size(93, 23);
             this.SalirProductos.TabIndex = 3;
@@ -77,13 +77,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 346);
+            this.ClientSize = new System.Drawing.Size(563, 346);
             this.Controls.Add(this.ClientesProductos);
             this.Controls.Add(this.SalirProductos);
             this.Controls.Add(this.ViewProductos);
             this.Controls.Add(this.ProductosGrid);
             this.Name = "Productos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosGrid)).EndInit();
             this.ResumeLayout(false);
 

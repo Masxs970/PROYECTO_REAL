@@ -72,29 +72,7 @@ namespace ProyectoTienda
 
         private void ViewCompras_Load(object sender, EventArgs e)
         {
-            //Leer archivo configuracion
-            ConnectionStringSettings setting = ConfigurationManager.ConnectionStrings["ProyectoTienda.Properties.Settings.sistema_tiendaConnectionString"];
-            //conectar con la base de datos
-            SqlConnection connection = new SqlConnection(setting.ConnectionString);
-            string sentencia2 = "SELECT * FROM compras";
-            SqlCommand x = new SqlCommand(sentencia2, connection);
-            try
-            {
-                //Abrir la conexión
-                connection.Open();
-                //Ejecutar comando
-                SqlDataReader rdr = x.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(rdr);
-                this.ComprasGrid.DataSource = dt;
-                //Cierro el Datareader, cerrara tb la conexión
-                rdr.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se ha producido un error" + ex.Message);
-            }
+           
 
         }
 
@@ -125,6 +103,30 @@ namespace ProyectoTienda
             //{
             //    MessageBox.Show("No se ha podido añadir la nueva compra" + ex.Message);
             //}
+            //Leer archivo configuracion
+
+            ConnectionStringSettings setting = ConfigurationManager.ConnectionStrings["ProyectoTienda.Properties.Settings.sistema_tiendaConnectionString"];
+            //conectar con la base de datos
+            SqlConnection connection = new SqlConnection(setting.ConnectionString);
+            string sentencia2 = " SELECT * FROM compras";
+            SqlCommand x = new SqlCommand(sentencia2, connection);
+            try
+            {
+                //Abrir la conexión
+                connection.Open();
+                //Ejecutar comando
+                SqlDataReader rdr = x.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(rdr);
+                this.ComprasGrid.DataSource = dt;
+                //Cierro el Datareader, cerrara tb la conexión
+                rdr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error" + ex.Message);
+            }
 
 
             try

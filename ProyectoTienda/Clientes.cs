@@ -51,7 +51,7 @@ namespace ProyectoTienda
             SqlConnection stablishconn = new SqlConnection(ajuste.ConnectionString);
 
             //Ahora con esta sentencia vamos a seleccionar la tabla Productos de la BBDD
-            string query = "SELECT id_cliente, nombre, apellido, dni, telefono FROM sistema_tienda.dbo.cliente";
+            string query = "SELECT nombre, apellido, dni, direccion, email, telefono FROM sistema_tienda.dbo.cliente";
             //Comando SQL que lleve a cabo la accion de la query
             SqlCommand command = new SqlCommand(query, stablishconn);
 
@@ -87,7 +87,7 @@ namespace ProyectoTienda
             SqlConnection conn = new SqlConnection(setting.ConnectionString); //Elemento 
 
             //Seleccionar la tabla 
-            string query = "INSERT INTO sistema_tienda.dbo.cliente" + "([nombre], [apellido], [dni], [direccion], [email], [telefono]) VALUES ('" + NombreBox.Text  + "','" + ApellidoBox.Text + "','" + dniBox.Text + "', '" + DireccionBox.Text +"', '" + EmailBox.Text + "',  '" + telBox.Text + "')";
+            string query = "INSERT INTO sistema_tienda.dbo.cliente" + "([nombre], [apellido], [dni], [direccion], [email], [telefono]) VALUES ('" + NombreBox.Text  + "','" + ApellidoBox.Text + "',  '" + dniBox.Text + "', '" + DireccionBox.Text +"', '" + EmailBox.Text + "',  '" + telBox.Text + "')";
 
             SqlCommand InsertCliente = new SqlCommand(query, conn);  //Comando SQL 
 
