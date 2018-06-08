@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace ProyectoTienda
 {
-    class Conexion
+    public class Conexion
     {
         public string StringConnection;
         protected string sql;

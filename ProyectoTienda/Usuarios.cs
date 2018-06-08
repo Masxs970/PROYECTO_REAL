@@ -7,12 +7,12 @@ using System.Data.SqlClient;
 
 namespace ProyectoTienda
 {
-    class Usuarios : Conexion
+    public class Usuarios : Conexion
     {
         private string user;
         private string password;
 
-        public Usuarios()
+        public Usuarios() :base()
         {
             user = string.Empty;
             password = string.Empty;
