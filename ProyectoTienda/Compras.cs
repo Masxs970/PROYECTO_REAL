@@ -14,7 +14,7 @@ namespace ProyectoTienda
 {
     public partial class ViewCompras : Form
     {
-        public SqlConnection cn = new SqlConnection("Data Source=DESKTOP-I3GP44S;Initial Catalog=sistema_tienda;Integrated Security=True");
+        
         public ViewCompras()
         {
             InitializeComponent();
@@ -78,32 +78,7 @@ namespace ProyectoTienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ////Leer Archivo Configuracion
-            //ConnectionStringSettings setting = ConfigurationManager.ConnectionStrings["ProyectoTienda.Properties.Settings.sistema_tiendaConnectionString"];
-
-            ////Conectarme con la bbdd
-            //SqlConnection conn = new SqlConnection(setting.ConnectionString); //Elemento 
-
-            ////Seleccionar la tabla 
-            //string query1 = "INSERT INTO sistema_tienda.dbo.sp_facturacion" + "([fecha], [nombre], [precio], [descripcion]) VALUES (" + FechaBox.Value + ", '" + ProductoBox.Text + "', " + PrecioBox.Text + ", '" + DescripcionBox.Text + "' )";
-
-
-            //SqlCommand InsertData = new SqlCommand(query1,  conn);  //Comando SQL 
-
-
-            //try
-            //{
-            //    //Abrir la conexion
-            //    conn.Open();
-
-            //    InsertData.ExecuteNonQuery();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("No se ha podido añadir la nueva compra" + ex.Message);
-            //}
-            //Leer archivo configuracion
+           
 
             ConnectionStringSettings setting = ConfigurationManager.ConnectionStrings["ProyectoTienda.Properties.Settings.sistema_tiendaConnectionString"];
             //conectar con la base de datos
@@ -131,10 +106,13 @@ namespace ProyectoTienda
 
             try
             {
+                ConnectionStringSettings m = ConfigurationManager.ConnectionStrings["ProyectoTienda.Properties.Settings.sistema_tiendaConnectionString"];
+                //conectar con la base de datos
+                SqlConnection o = new SqlConnection(m.ConnectionString);
 
-                SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-I3GP44S;Initial Catalog=sistema_tienda;Integrated Security=True");
 
-                SqlCommand cmd = new SqlCommand("sp_InsertaCompra", Conexion);
+
+                SqlCommand cmd = new SqlCommand("sp_InsertaCompra", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = FechaBox.Text;
@@ -143,11 +121,11 @@ namespace ProyectoTienda
                 cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = DescripcionBox.Text;
 
 
-                Conexion.Open();
+                connection.Open();
 
                 cmd.ExecuteNonQuery();
 
-                Conexion.Close();
+                connection.Close();
                 MessageBox.Show("Datos insertados correctamente");
             }
             catch (Exception ex)
